@@ -1,0 +1,14 @@
+# A sample Guardfile
+# More info at https://github.com/guard/guard#readme
+
+guard 'rake', :task => 'spec' do
+  watch(%r{^manifests.+\.pp$})
+  watch(%r{^lib.+\.rb$})
+  watch(%r{^spec/classes/.+\_spec.rb$})
+  watch(%r{^spec/unit/.+\_spec.rb$})
+  watch(%r{^templates.+\.erb$})
+end
+
+guard 'rake', :task => 'lint' do
+  watch(%r{^manifests.+\.pp$})
+end
